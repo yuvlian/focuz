@@ -9,7 +9,7 @@
     if (config.blockFocus) {
         const aeProxyHandler = {
             apply(target, thisArg, args) {
-                if (["blur", "focus", "focusin", "focusout"].includes(args[0])) {
+                if (["blur", "focus", "focusin", "focusout", "unload"].includes(args[0])) {
                     return;
                 }
                 return Reflect.apply(target, thisArg, args);
